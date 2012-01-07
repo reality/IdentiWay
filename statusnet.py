@@ -15,7 +15,7 @@
 # You should have received a copy of the GNU General Public License 
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import urllib, urllib2, httplib, helpers, config, time
+import urllib, urllib2, httplib, helpers, time
 try:
     import json
 except ImportError:
@@ -341,6 +341,7 @@ class StatusNet(object):
         return self.__makerequest("statuses/show/%s" % str(id))
 
     def statuses_update(self, status, source="", in_reply_to_status_id=0, latitude=-200, longitude=-200, place_id="", display_coordinates=False, long_dent="split", dup_first_word=False):
+        print "called"
         status = "".join([s.strip(" ") for s in status.split("\n")])  # rejoin split lines back to 1 line
         params = {'status':status}
         if not (source == ""):
