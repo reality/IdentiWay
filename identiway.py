@@ -22,7 +22,7 @@ class IdentiWay(sleekxmpp.ClientXMPP):
         self.add_event_handler("session_start", self.start)
         self.add_event_handler("message", self.message)
         self.api_conns = {}
-        self.api_conns["reality@jabber.rootbash.com"] = StatusNet("http://identi.ca/api", "reality", "gd87e92")
+        self.api_conns["reality@jabber.rootbash.com"] = StatusNet("http://identi.ca/api", "reality", "")
 
     def start(self, event):
         self.send_presence()
